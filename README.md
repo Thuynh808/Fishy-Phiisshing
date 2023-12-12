@@ -63,39 +63,54 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 </details>
 
-
-
 <details>
-  <summary><h2><b>Section 2: Collecting and Analyzing Phishing Emails</b></h2></summary>
-  This section focuses on the collection and initial analysis of phishing emails using Python scripts and GitHub. We'll also begin our examination of the emails using Thunderbird and our specialized tools.
+  <summary><h2><b>Section 2: Script Development and Data Collection</b></h2></summary>
+  In this section, we'll dive into the development of our Python script. This script will interact with the GitHub API to automate the downloading of phishing email samples.
 
-  - **Step 1: Fetch Phishing Email Samples**:  
-    Use the Python script to automate the downloading of phishing email samples from GitHub.
+  - **Python Script Creation**:  
+    We'll code a script in Python that efficiently downloads email samples from the designated GitHub repository.
+    - **API Interaction**: Script will use GitHub API for fetching emails.
+    - **Data Organization**: Downloads will be organized for easy access and analysis.
 
-  - **Step 2: Initial Sorting and Categorization of Emails**:  
-    Organize the emails into different categories for a more structured analysis.
-
-  - **Step 3: Conduct Detailed Analysis**:  
-    Using Thunderbird, PhishTool, and other tools, start dissecting the emails for phishing indicators and tactics.
-    
-  ![Placeholder Image for Email Analysis](https://i.imgur.com/linkToEmailAnalysis.png)
-
-  This detailed analysis will form the core of our project, allowing us to understand and document the various techniques used in phishing attacks.
-
+  ![Placeholder Image for Script Development](https://i.imgur.com/linkToScriptDevImage.png)
 </details>
 
 <details>
-  <summary><h2><b>Section 3: Creating Awareness and Educational Materials</b></h2></summary>
-  Based on our findings from the analysis, this section will focus on developing educational content to help individuals and organizations recognize and protect against phishing attacks.
+  <summary><h2><b>Section 3: Analyzing Phishing Emails</b></h2></summary>
+  Here, we focus on the detailed analysis of the phishing emails using our chosen tools.
 
-  - **Step 1: Compile Findings**:  
-    Assemble all documented analysis into a comprehensive format.
+  - **Email Examination with Thunderbird**:  
+    We'll utilize Thunderbird to inspect the contents and structure of each email.
+  - **Threat Assessment**:  
+    Using Talos Intelligence and VirusTotal, we'll evaluate any links or attachments for threats.
+  - **Using PhishTool**:  
+    This tool will help us in deeper analysis, including header examination and pattern identification.
 
-  - **Step 2: Develop Educational Content**:  
-    Create guidelines, best practices, and other materials using real examples from our analysis.
-    
-  ![Placeholder Image for Educational Content](https://i.imgur.com/linkToEducationalContent.png)
+  ![Placeholder Image for Email Analysis](https://i.imgur.com/linkToEmailAnalysisImage.png)
+</details>
 
-  The completion of this section will mark the end of our project, equipping us with valuable materials to raise awareness about phishing threats.
+<details>
+  <summary><h2><b>Section 4: Compiling the Phishing Report</b></h2></summary>
+  Our final task is to compile a comprehensive phishing report that encapsulates our findings and insights.
 
+  - **Report Structure**:  
+    Outline of the report, including types of attacks, common traits, and notable patterns.
+  - **Key Findings**:  
+    Summarization of the most significant insights from our analysis.
+  - **Recommendations**:  
+    Practical advice and strategies based on our findings.
+
+  ![Placeholder Image for Report Compilation](https://i.imgur.com/linkToReportCompilationImage.png)
+</details>
+
+<details>
+  <summary><h2><b>Section 5: Reflection and SOC Analyst Insights</b></h2></summary>
+  In this concluding section, we reflect on the entire project and its implications in the real world of cybersecurity.
+
+  - **Project Reflection**:  
+    Discuss the skills and knowledge gained throughout the project.
+  - **SOC Analyst Role Simulation**:  
+    How this project simulates the role of a SOC analyst and its relevance to actual cybersecurity scenarios.
+
+  ![Placeholder Image for Reflection](https://i.imgur.com/linkToReflectionImage.png)
 </details>
