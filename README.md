@@ -68,13 +68,27 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   <summary><h2><b>Section 2: Script Development and Data Collection</b></h2></summary>
   In this section, we'll dive into the development of our Python script. This script will interact with the GitHub API to automate the downloading of phishing email samples.
 
-  - **Python Script Creation**:  
-    We'll code a script in Python that efficiently downloads email samples from the designated GitHub repository.
-    - **API Interaction**: Script will use GitHub API for fetching emails.
-    - **Data Organization**: Downloads will be organized for easy access and analysis.
+  **Discovering the Data Source**
+  Our search for real-world phishing samples begins with a simple Google search: "github phishing pot". The search results lead us to a GitHub repository containing a collection of phishing emails.
 
-    <details>
-    <summary>download_emails.py <b>(CLICK HERE TO VIEW)</b></summary>
+  ![Screenshot of Google search result](path-to-your-screenshot-of-google-search)
+
+  Upon visiting the repository, we note the following details which are crucial for our script:
+
+  - GitHub Username: `rf-peixoto`
+  - Repository Name: `phishing_pot`
+  - Branch Name: `main`
+  - Folder Containing Emails: `email`
+
+  ![Screenshot of the GitHub repository](path-to-your-screenshot-of-github-repo)
+
+  With this information, we can begin crafting our script.
+
+  **Crafting the Python Script**
+  The script is developed in Python, a powerful language for automation tasks. It includes comments to guide us through its functionality:<br><br>
+
+  <details>
+    <summary>Download_Emails.py <b>(CLICK HERE TO VIEW)</b></summary>
   
     ```python
     import requests  # Importing the requests library to handle HTTP requests
@@ -119,6 +133,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   ![Placeholder Image for Script Development](https://i.imgur.com/linkToScriptDevImage.png)
   
 </details>
+
 
 <details>
   <summary><h2><b>Section 3: Analyzing Phishing Emails</b></h2></summary>
