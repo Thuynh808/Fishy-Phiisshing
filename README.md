@@ -66,9 +66,9 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 <details>
   <summary><h2><b>Section 2: Script Development and Data Collection</b></h2></summary>
-  In this section, we'll dive into the development of our Python script. This script will interact with the GitHub API to automate the downloading of phishing email samples.
+  In this section, we'll dive into the development of our Python script. This script will interact with the GitHub API to automate the downloading of phishing email samples.<br><br>
 
-  **Discovering the Data Source**
+  - **Step 1: Discovering the Data Source**
   Our search for real-world phishing samples begins with a simple Google search: "github phishing pot". The search results lead us to a GitHub repository containing a collection of phishing emails.
 
   ![Screenshot of Google search result](path-to-your-screenshot-of-google-search)
@@ -84,13 +84,10 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
   With this information, we can begin crafting our script.
 
-  **Crafting the Python Script**
-  The script is developed in Python, a powerful language for automation tasks. It includes comments to guide us through its functionality:<br><br>
-
-  <details>
-    <summary>Download_Emails.py <b>(CLICK HERE TO VIEW)</b></summary>
+  - **Step 2: Crafting the Python Script**
+  The script is developed in Python, a powerful language for automation tasks. As we look at the script, it's important to recognize the lines beginning with `#`. These are comments, meant to explain the steps and provide clarity on the script's operation. They are not executed as code and are simply there to guide anyone reading the script.<br><br>
   
-    ```python
+  ```python
     import requests  # Importing the requests library to handle HTTP requests
     import os  # Importing the os library for interacting with the operating system
 
@@ -127,8 +124,13 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
                     print(f'Failed to download: {file["name"]}')  # Printing an error message if download fails
     else:
         print(f'Failed to access GitHub folder: {github_folder}')  # Printing an error message if GitHub folder access fails
-    ```
-    </details>
+  ```
+   <br><br>
+
+  - **Step 3: Saving and Running the Script**<br><br>
+    - After the script is crafted, the next steps are to save it and execute it to begin the download process.<br><br>
+    - Here, we'll save the script as 'download_emails.py'<br><br>
+    - In the terminal, navigate to the location of our script and run 'python download_emails.py' (make sure we have the proper privileges)<br><br>
 
   ![Placeholder Image for Script Development](https://i.imgur.com/linkToScriptDevImage.png)
   
