@@ -1,4 +1,4 @@
-# Fishy Phiisshing
+# Project Fishy Phiisshing
 
 ![Placeholder Image for Project](https://i.imgur.com/linkToPlaceholderImage.png)
 
