@@ -125,7 +125,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     else:
         print(f'Failed to access GitHub folder: {github_folder}')  # Printing an error message if GitHub folder access fails
   ```
-   <br><br>
+   <br>
 
   - **Step 3: Saving and Running the Script**<br><br>
     - After the script is crafted, the next steps are to save it and execute it to begin the download process.<br><br>
@@ -133,22 +133,90 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - In the terminal, navigate to the location of our script and run 'python download_emails.py' (make sure we have the proper privileges)<br><br>
 
   ![Placeholder Image for Script Development](https://i.imgur.com/linkToScriptDevImage.png)
+
+  We've now identified a valuable data source, crafted a Python script to automate data retrieval, and run the script to populate our local directory with phishing email samples. This sets a solid foundation for the analysis phase, where we'll dissect the tactics used in these deceptive emails.
   
 </details>
 
-
 <details>
   <summary><h2><b>Section 3: Analyzing Phishing Emails</b></h2></summary>
-  Here, we focus on the detailed analysis of the phishing emails using our chosen tools.
+  In this part of our project, we carefully examine a phishing email sample. We use Thunderbird to inspect its content, while tools like PhishTool can help us to examine its deeper technical aspects.
 
   - **Email Examination with Thunderbird**:  
-    We'll utilize Thunderbird to inspect the contents and structure of each email.
-  - **Threat Assessment**:  
-    Using Talos Intelligence and VirusTotal, we'll evaluate any links or attachments for threats.
-  - **Using PhishTool**:  
-    This tool will help us in deeper analysis, including header examination and pattern identification.
+    We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br><br>
 
-  ![Placeholder Image for Email Analysis](https://i.imgur.com/linkToEmailAnalysisImage.png)
+    - Urgent call to action
+    - Grammatical errors
+    - Demand for immediate verification of account details
+
+![Screenshot of phishing email in Thunderbird](path-to-the-screenshot-of-email-in-thunderbird)
+
+  Next, we'll take a look at the source code to gather more intel.
+
+![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
+
+    
+  - **Source Code Analysis**: 
+    Diving into the source code of the email, we identify multiple discrepancies that confirms our suspicions:
+    - Return Path and Originating IP Mismatch:
+      - Return-Path: <38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>
+      - Originating IP: [38.135.39.232]
+    
+    - Authentication Results:
+      - SPF: pass for domain torres.newenglandmuscle.com
+      - DKIM: neutral with no clear alignment with the sender domain
+      - DMARC: None indicating no DMARC record found for the sending domain
+    This means that the sender was not properly verified<br>
+    
+    - Language Indicating Urgency:
+      - Phrase: "Please note that if your informations is not validate within 24 hours, Your Account will be permanently blocked!"
+    Phishing attempts usually would rush the victim to take action immediately.<br>
+
+    - Grammatical Errors:
+      - Word: informations instead of the correct term information
+    Grammar issures are good indicators for phishing attempts
+
+    - Sender Information:
+      - Display Name: NETFLIX🎬
+      - Sender Email: 205483683@torres.newenglandmuscle.com
+    Their goal is to impersonate someone we trust to trick us into thinking they're legitimate.
+
+    - Suspicious Link:
+      - The email prompts action to "UPDATE MY PAYMENT DETAILS" with a suspicious link:<br>
+        `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`
+    This link could lead us to credential harvesters or introduce malware into our system.
+        
+![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
+
+  - **Analysis with PhishTool**:  
+    We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.
+    - Head to `phishtool.com` and submit the sample email for analysis
+    - The tool confirms several suspicions:
+      - The email is sent from an IP address that does not align with the legitimate domain.
+      - The Return-Path and originating IP address are linked to a domain not associated with Netflix.
+      - SPF and DKIM checks do not align with typical results for legitimate emails from the claimed sender.
+
+    
+![Screenshot of email analysis in PhishTool](path-to-phish-tool-analysis-screenshot)
+
+![Screenshot of email analysis in PhishTool](path-to-phish-tool-analysis-screenshot)
+
+  - **WHOIS Lookup Confirmation**:  
+    A WHOIS lookup on the originating IP address uncovers that the email originated from an IP associated with 'PSINet, Inc.', which does not correspond with the Netflix domain. This discrepancy is a common trait of phishing emails.
+
+![Screenshot of WHOIS lookup](path-to-whois-lookup-screenshot)
+
+![Screenshot of WHOIS lookup](path-to-whois-lookup-screenshot)
+
+  With these steps, we've confirmed the suspicious nature of the email using our analysis tools, reinforcing the initial red flags detected in the email content.
+  
+  - **Rendered HTML and Credential Harvesting Page**:  
+    Upon rendering the HTML of the phishing email, we encounter a credential harvesting page, disguised as a legitimate login portal to deceive the recipient into providing sensitive information.
+
+![Screenshot of credential harvesting page](path-to-credential-harvesting-page-screenshot)
+
+  This thorough analysis not only showcases the deceptive techniques used by cybercriminals but also emphasizes the importance of vigilant examination of every aspect of an email that raises suspicion.
+
 </details>
 
 <details>
