@@ -143,7 +143,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   In this part of our project, we carefully examine a phishing email sample. We use Thunderbird to inspect its content, while tools like PhishTool can help us to examine its deeper technical aspects.
 
   - **Email Examination with Thunderbird**:  
-    We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br><br>
+    We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br>
 
     - Urgent call to action
     - Grammatical errors
@@ -156,7 +156,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 ![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
 
     
-  - **Source Code Analysis**: 
+  - **Source Code Analysis**:<br>
     Diving into the source code of the email, we identify multiple discrepancies that confirms our suspicions:
     - Return Path and Originating IP Mismatch:
       - Return-Path: <38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>
@@ -183,15 +183,15 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
     - Suspicious Link:
       - The email prompts action to "UPDATE MY PAYMENT DETAILS" with a suspicious link:<br>
-        `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`
+        `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`<br><br>
     This link could lead us to credential harvesters or introduce malware into our system.
         
 ![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
 
   - **Analysis with PhishTool**:  
     We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.
-    - Head to `phishtool.com` and submit the sample email for analysis
-    - The tool confirms several suspicions:
+        - Head to `phishtool.com` and submit the sample email for analysis<br><br>
+    - We can confirm several indicators of phishing that were initially observed in the source code:
       - The email is sent from an IP address that does not align with the legitimate domain.
       - The Return-Path and originating IP address are linked to a domain not associated with Netflix.
       - SPF and DKIM checks do not align with typical results for legitimate emails from the claimed sender.
