@@ -63,6 +63,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 </details>
 
+
 <details>
   <summary><h2><b>Section 2: Script Development and Data Collection</b></h2></summary>
   In this section, we'll dive into the development of our Python script. This script will interact with the GitHub API to automate the downloading of phishing email samples.
@@ -72,7 +73,51 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - **API Interaction**: Script will use GitHub API for fetching emails.
     - **Data Organization**: Downloads will be organized for easy access and analysis.
 
+    <details>
+    <summary>download_emails.py <b>(CLICK HERE TO VIEW)</b></summary>
+  
+    ```python
+    import requests  # Importing the requests library to handle HTTP requests
+    import os  # Importing the os library for interacting with the operating system
+
+    # Setting variables for GitHub repository details
+    github_username = 'rf-peixoto'  # GitHub username
+    repository_name = 'phishing_pot'  # Repository name
+    branch_name = 'main'  # Branch name
+
+    # Setting the folder in the GitHub repo and the local directory to save files
+    github_folder = 'email'  # Folder name in the GitHub repository
+    local_folder = '/home/thuynh808/Desktop/Phishing/samples/'  # Local folder path for saving files
+
+    # Constructing the URL to access the contents of the specified folder in the GitHub repository
+    url = f'https://api.github.com/repos/{github_username}/{repository_name}/contents/{github_folder}?ref={branch_name}'
+
+    # Making an HTTP GET request to the GitHub API
+    response = requests.get(url)
+    # Checking if the request was successful
+    if response.status_code == 200:
+        files = response.json()  # Parsing the response to JSON to get a list of files
+        # Iterating over each file in the folder
+        for file in files:
+            # Checking if the file is an email file (.eml)
+            if file['name'].endswith('.eml'):
+                # Making a GET request to download the file
+                download_response = requests.get(file['download_url'])
+                # Checking if the download was successful
+                if download_response.status_code == 200:
+                    # Opening/creating a file in write-binary mode in the specified local directory
+                    with open(os.path.join(local_folder, file['name']), 'wb') as f:
+                        f.write(download_response.content)  # Writing the content of the download to the file
+                    print(f'Downloaded: {file["name"]}')  # Printing a confirmation message
+                else:
+                    print(f'Failed to download: {file["name"]}')  # Printing an error message if download fails
+    else:
+        print(f'Failed to access GitHub folder: {github_folder}')  # Printing an error message if GitHub folder access fails
+    ```
+    </details>
+
   ![Placeholder Image for Script Development](https://i.imgur.com/linkToScriptDevImage.png)
+  
 </details>
 
 <details>
