@@ -140,7 +140,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 <details>
   <summary><h2><b>Section 3: Analyzing Phishing Emails</b></h2></summary>
-  In this part of our project, we carefully examine a phishing email sample. We use Thunderbird to inspect its content, while tools like PhishTool can help us to examine its deeper technical aspects.
+  In this part of our project, we carefully examine phishing email samples. We use Thunderbird to inspect its content, while tools like PhishTool and VirusTotal can help us examine their deeper technical aspects.
 
   - **Email Examination with Thunderbird**:  
     We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br>
