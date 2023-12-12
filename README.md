@@ -140,7 +140,12 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 <details>
   <summary><h2><b>Section 3: Analyzing Phishing Emails</b></h2></summary>
-  In this part of our project, we carefully examine phishing email samples. We use Thunderbird to inspect its content, while tools like PhishTool and VirusTotal can help us examine their deeper technical aspects.
+  In this part of our project, we'll carefully examine 2 phishing email samples. We'll use Thunderbird to inspect its content, while tools like PhishTool and VirusTotal can help us examine their deeper technical aspects.
+
+  <details>
+  <summary><h3><b>Subsection 3.1: Email Analysis #1</b></h3></summary>
+    
+  Let's begin our investigation by opening the first email file in Thunderbird on our Kali machine. Time to start the analysis!
 
   - **Email Examination with Thunderbird**:  
     We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br>
@@ -182,7 +187,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     Their goal is to impersonate someone we trust to trick us into thinking they're legitimate.
 
     - Suspicious Link:
-      - The email prompts action to "UPDATE MY PAYMENT DETAILS" with a suspicious link:<br>
+      - The email prompts action to "UPDATE MY PAYMENT DETAILS" with a suspicious link:<br><br>
         `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`<br><br>
     This link could lead us to credential harvesters or introduce malware into our system.
         
@@ -216,6 +221,8 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 ![Screenshot of credential harvesting page](path-to-credential-harvesting-page-screenshot)
 
   This thorough analysis not only showcases the deceptive techniques used by cybercriminals but also emphasizes the importance of vigilant examination of every aspect of an email that raises suspicion.
+
+  </details>
 
 </details>
 
