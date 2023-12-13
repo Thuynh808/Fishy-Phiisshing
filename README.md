@@ -170,20 +170,20 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Authentication Results:
       - SPF: pass for domain torres.newenglandmuscle.com
       - DKIM: neutral with no clear alignment with the sender domain
-      - DMARC: None indicating no DMARC record found for the sending domain
+      - DMARC: None indicating no DMARC record found for the sending domain<br><br>
     This means that the sender was not properly verified<br>
     
     - Language Indicating Urgency:
-      - Phrase: "Please note that if your informations is not validate within 24 hours, Your Account will be permanently blocked!"
+      - Phrase: "Please note that if your informations is not validate within 24 hours, Your Account will be permanently blocked!"<br><br>
     Phishing attempts usually would rush the victim to take action immediately.<br>
 
     - Grammatical Errors:
-      - Word: informations instead of the correct term information
+      - Word: informations instead of the correct term information<br><br>
     Grammar issures are good indicators for phishing attempts
 
     - Sender Information:
       - Display Name: NETFLIX🎬
-      - Sender Email: 205483683@torres.newenglandmuscle.com
+      - Sender Email: 205483683@torres.newenglandmuscle.com<br><br>
     Their goal is to impersonate someone we trust to trick us into thinking they're legitimate.
 
     - Suspicious Link:
@@ -195,11 +195,11 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
   - **Analysis with PhishTool**:  
     We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.
-        - Head to `phishtool.com` and submit the sample email for analysis<br><br>
+    - Head to `phishtool.com` and submit the sample email for analysis
     - We can confirm several indicators of phishing that were initially observed in the source code:
       - The email is sent from an IP address that does not align with the legitimate domain.
-      - The Return-Path and originating IP address are linked to a domain not associated with Netflix.
-      - SPF and DKIM checks do not align with typical results for legitimate emails from the claimed sender.
+      - The Return-Path and originating IP address are linked to a domain not associated with Netflix
+      - SPF and DKIM checks do not align with typical results for legitimate emails from the claimed sender
 
     
 ![Screenshot of email analysis in PhishTool](path-to-phish-tool-analysis-screenshot)
@@ -276,8 +276,8 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 ![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
 
   - **Analysis with PhishTool**:  
-    We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.
-        - Head to `phishtool.com` and submit the sample email for analysis<br><br>
+    We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.<br><br>
+    - Head to `phishtool.com` and submit the sample email for analysis<br><br>
     - We can confirm several indicators of phishing that were initially observed in the source code:
       - The email is sent from an IP address that does not align with the legitimate domain.
       - The Return-Path and originating IP address are linked to a domain not associated with Netflix.
