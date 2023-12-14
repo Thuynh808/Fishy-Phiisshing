@@ -140,10 +140,10 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 <details>
   <summary><h2><b>Section 3: Analyzing Phishing Emails</b></h2></summary>
-  In this part of our project, we'll carefully examine 2 phishing email samples. We'll use Thunderbird to inspect its content, while tools like PhishTool and VirusTotal can help us examine their deeper technical aspects.
+  In this part of our project, we'll carefully examine 2 phishing email samples. We'll use Thunderbird to inspect its content, while tools like PhishTool, Talos and VirusTotal can help us examine their deeper technical aspects.
 
   <details>
-  <summary><h3><b>Subsection 3.1: Email #1 Analysis</b></h3></summary>
+  <summary><h3><b>Subsection 3.1: Email 1 Analysis</b></h3></summary>
     
   Let's begin our investigation by opening the first email file in Thunderbird on our Kali machine. Time to start the analysis!
 
@@ -225,9 +225,9 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   </details>
 
   <details>
-  <summary><h3><b>Subsection 3.2: Email #2 Analysis</b></h3></summary>
+  <summary><h3><b>Subsection 3.2: Email 2 Analysis</b></h3></summary>
 
-  Now lets dig into a detailed examination of our phishing email #2, exploring its contents and analyzing the header to uncover the tactics used by cybercriminals.
+  Now lets dig into a detailed examination of our phishing email 2, exploring its contents and analyzing the header to uncover the tactics used by cybercriminals.
 
   - **Initial Email Inspection with Thunderbird**:
 
@@ -289,7 +289,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   </details>
 
   <details>
-  <summary><h3><b>Subsection 3.3: Email #2 Further Analysis</b></h3></summary>
+  <summary><h3><b>Subsection 3.3: Email 2 Attachment Analysis</b></h3></summary>
   
   The analysis of attachments in phishing emails is critical, as these files can contain harmful payloads. Here, we'll extract and verify the hash of the attachment:
 
