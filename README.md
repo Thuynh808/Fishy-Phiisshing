@@ -226,86 +226,46 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
   <details>
   <summary><h3><b>Subsection 3.2: Email Analysis #2</b></h3></summary>
+
+  Now lets dig into a detailed examination of our phishing email #2, exploring its contents and analyzing the header to uncover the tactics used by cybercriminals.
+
+  - **Initial Email Inspection with Thunderbird**:
+
+    Upon opening the suspicious email in Thunderbird, we notice some immediate red flags:
+    - Missing Body Content:
+      - The email lacks any body content, displaying only the subject line which could be a tactic to evade simple content filters.
     
-  Let's begin our investigation by opening the first email file in Thunderbird on our Kali machine. Time to start the analysis!
-
-  - **Email Examination with Thunderbird**:  
-    We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br>
-
-    - Urgent call to action
-    - Grammatical errors
-    - Demand for immediate verification of account details
-
-![Screenshot of phishing email in Thunderbird](path-to-the-screenshot-of-email-in-thunderbird)
-
-  Next, we'll take a look at the source code to gather more intel.
-
-![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
-
+    - Subject Line Presence:
+      - The subject line alone is designed to create a sense of urgency or curiosity to compel the recipient to view the attachment.
     
-  - **Source Code Analysis**:<br>
-    Diving into the source code of the email, we identify multiple discrepancies that confirms our suspicions:
-    - Return Path and Originating IP Mismatch:
-      - Return-Path: <38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>
-      - Originating IP: [38.135.39.232]
+    - Sender Mismatch:
+      - The sender's email address (`auth-replyP8YjBYJqsq@lynnswig.com`) does not match the expected domain of a legitimate Apple communication.
     
-    - Authentication Results:
-      - SPF: pass for domain torres.newenglandmuscle.com
-      - DKIM: neutral with no clear alignment with the sender domain
-      - DMARC: None indicating no DMARC record found for the sending domain
-    This means that the sender was not properly verified<br>
-    
-    - Language Indicating Urgency:
-      - Phrase: "Please note that if your informations is not validate within 24 hours, Your Account will be permanently blocked!"
-    Phishing attempts usually would rush the victim to take action immediately.<br>
+    - Sole Attachment:
+      - A solitary attachment is present, often a vector for delivering malware or enticing users to enter their credentials on a fraudulent webpage.
 
-    - Grammatical Errors:
-      - Word: informations instead of the correct term information
-    Grammar issures are good indicators for phishing attempts
+![Screenshot](path-to-the-screenshot-of-email-in-thunderbird)<br><br>
 
-    - Sender Information:
-      - Display Name: NETFLIX🎬
-      - Sender Email: 205483683@torres.newenglandmuscle.com
-    Their goal is to impersonate someone we trust to trick us into thinking they're legitimate.
-
-    - Suspicious Link:
-      - The email prompts action to "UPDATE MY PAYMENT DETAILS" with a suspicious link:<br><br>
-        `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`<br><br>
-    This link could lead us to credential harvesters or introduce malware into our system.
-        
-![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
-
-  - **Analysis with PhishTool**:  
-    We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.<br><br>
-    - Head to `phishtool.com` and submit the sample email for analysis<br><br>
-    - We can confirm several indicators of phishing that were initially observed in the source code:
-      - The email is sent from an IP address that does not align with the legitimate domain.
-      - The Return-Path and originating IP address are linked to a domain not associated with Netflix.
-      - SPF and DKIM checks do not align with typical results for legitimate emails from the claimed sender.
-
-    
-![Screenshot of email analysis in PhishTool](path-to-phish-tool-analysis-screenshot)
-
-![Screenshot of email analysis in PhishTool](path-to-phish-tool-analysis-screenshot)
-
-  - **WHOIS Lookup Confirmation**:  
-    A WHOIS lookup on the originating IP address uncovers that the email originated from an IP associated with 'PSINet, Inc.', which does not correspond with the Netflix domain. This discrepancy is a common trait of phishing emails.
-
-![Screenshot of WHOIS lookup](path-to-whois-lookup-screenshot)
-
-![Screenshot of WHOIS lookup](path-to-whois-lookup-screenshot)
-
-  With these steps, we've confirmed the suspicious nature of the email using our analysis tools, reinforcing the initial red flags detected in the email content.
+  - **Source Code Analysis**:
   
-  - **Rendered HTML and Credential Harvesting Page**:  
-    Upon rendering the HTML of the phishing email, we encounter a credential harvesting page, disguised as a legitimate login portal to deceive the recipient into providing sensitive information.
+    Closer examination of the email's source code uncovers alarming details:
+    - Return Path and IP Mismatch**: 
+      - The Return-Path (`auth-replyP8YjBYJqsq@lynnswig.com`) differs from the Originating IP (`40.107.94.65`), which is not typically associated with legitimate Apple emails.
+        
+    - Authentication Results: 
+      - The SPF check passes, but the absence of a DMARC policy (`DMARC: none`) for `lynnswig.com` is concerning as it allows for potential domain impersonation.
 
-![Screenshot of credential harvesting page](path-to-credential-harvesting-page-screenshot)
+![Screenshot](path-to-the-screenshot-of-email-in-thunderbird)<br><br>
 
-  This thorough analysis not only showcases the deceptive techniques used by cybercriminals but also emphasizes the importance of vigilant examination of every aspect of an email that raises suspicion.
+CONTINUE HERE!
 
-  </details>
 
+
+
+
+
+
+These findings highlight the sophistication of phishing tactics and underscore the necessity of rigorous email analysis. The specific values noted here will be instrumental in constructing an informative phishing report.
 </details>
 
 <details>
