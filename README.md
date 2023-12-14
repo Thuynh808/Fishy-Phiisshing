@@ -1,6 +1,6 @@
 # Project Fishy Phiisshing
 
-![Placeholder Image for Project](https://i.imgur.com/linkToPlaceholderImage.png)
+![Project](https://i.imgur.com/KY3g39T.png)
 
 ## Objective
 
