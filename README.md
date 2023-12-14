@@ -249,7 +249,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   - **Source Code Analysis**:
   
     Closer examination of the email's source code uncovers alarming details:
-    - Return Path and IP Mismatch**: 
+    - Return Path and IP Mismatch: 
       - The Return-Path (`auth-replyP8YjBYJqsq@lynnswig.com`) differs from the Originating IP (`40.107.94.65`), which is not typically associated with legitimate Apple emails.
         
     - Authentication Results: 
@@ -257,7 +257,49 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 ![Screenshot](path-to-the-screenshot-of-email-in-thunderbird)<br><br>
 
-CONTINUE HERE!
+
+  - **PhishTool Analysis**:
+
+    Now lets import the source code into PhishTool for analysis. This provides insight into the email's journey through various servers, as well as authentication records which can provide key indicators of phishing.
+    - Sender Mismatch:
+      - Here we see the sender (`auth-replyP8YjBYJqsq@lynnswig.com`) does not match the expected domain of Apple
+        
+    - Transmission Path Anomalies: 
+      - The email has passed through several servers, which is unusual for direct communication from trusted organizations like Apple.
+
+![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+
+![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+      
+  - *continued analyis...*
+    
+    - Analysis of SPF, DKIM, and DMARC Records: 
+      - No SPF record found for the `lynnswig.com` domain suggests that the domain has not been set up to specify which mail servers are permitted to send email on its behalf.
+      - The lack of DKIM and DMARC records could be an indication that the domain is not properly secured and/or possibly spoofed.
+
+    - WHOIS Lookup on Originating IP:
+      - The WHOIS lookup reveals that the originating IP (`40.107.94.65`) is owned by Microsoft Corporation. This could imply that the sender might be using a compromised server or is attempting to spoof a legitimate Microsoft IP to lend credibility to the phishing attempt.
+
+![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+
+![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+
+  These findings, when combined with the initial email content review, solidify the conclusion that the email is indeed a phishing attempt. The absence of key authentication records, along with the use of a potentially spoofed Microsoft IP, are techniques commonly used by cybercriminals to bypass security measures and exploit recipients.
+
+  </details>
+
+  <details>
+  <summary><h3><b>Subsection 3.3: Attachment Analysis for Email `#2` </b></h3></summary>
+  
+  The analysis of attachments in phishing emails is critical, as these files can contain harmful payloads. We follow a systematic approach to extract and verify the hash of the attachment:
+
+  - **Attachment Retrieval in Thunderbird**:  
+    Upon reviewing the email in Thunderbird, we noted an attached file named `Support-1923819248-67889.pdf`, which is characteristic of phishing attempts to disseminate malware or capture sensitive information.
+    
+    ![Screenshot of the email with attachment in Thunderbird](path-to-email-with-attachment-in-thunderbird)
+
+  - **File Hash Extraction Process**:  
+    We saved the attachment to a controlled environment for further analysis. Utilizing terminal commands in Kali Linux, we executed `
 
 
 
