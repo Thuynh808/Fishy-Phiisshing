@@ -143,7 +143,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   In this part of our project, we'll carefully examine 2 phishing email samples. We'll use Thunderbird to inspect its content, while tools like PhishTool and VirusTotal can help us examine their deeper technical aspects.
 
   <details>
-  <summary><h3><b>Subsection 3.1: Email Analysis #1</b></h3></summary>
+  <summary><h3><b>Subsection 3.1: Email #1 Analysis</b></h3></summary>
     
   Let's begin our investigation by opening the first email file in Thunderbird on our Kali machine. Time to start the analysis!
 
@@ -225,7 +225,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   </details>
 
   <details>
-  <summary><h3><b>Subsection 3.2: Email Analysis #2</b></h3></summary>
+  <summary><h3><b>Subsection 3.2: Email #2 Analysis</b></h3></summary>
 
   Now lets dig into a detailed examination of our phishing email #2, exploring its contents and analyzing the header to uncover the tactics used by cybercriminals.
 
@@ -289,25 +289,58 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   </details>
 
   <details>
-  <summary><h3><b>Subsection 3.3: Attachment Analysis for Email `#2` </b></h3></summary>
+  <summary><h3><b>Subsection 3.3: Email #2 Further Analysis</b></h3></summary>
   
-  The analysis of attachments in phishing emails is critical, as these files can contain harmful payloads. We follow a systematic approach to extract and verify the hash of the attachment:
+  The analysis of attachments in phishing emails is critical, as these files can contain harmful payloads. Here, we'll extract and verify the hash of the attachment:
 
   - **Attachment Retrieval in Thunderbird**:  
     Upon reviewing the email in Thunderbird, we noted an attached file named `Support-1923819248-67889.pdf`, which is characteristic of phishing attempts to disseminate malware or capture sensitive information.
+
+    - Save the file directly from the email client to our isolated virtual environment. Careful not to open or execute the file.
+
+  - **Hash Extraction**:
+    - Open the Terminal and navigate to the location of the saved attachment file
+    - Run the following to extract the hash value of the file
+      ```bash
+      sha256sum Support-1923819248-67889.pdf
+      ```
+    - Hash Value:
+      `54abc6abba94940a13312f3030dcc9e0f9533dde6282aea31f82ee7f7be5ec4b`
+        
+![Screenshot of the email with attachment in Thunderbird](path-to-email-with-attachment-in-thunderbird)<br><br>
+
+![Screenshot of the email with attachment in Thunderbird](path-to-email-with-attachment-in-thunderbird)<br><br>
+
+  - **Reputation Check via Talos**:  
+    Using the Cisco Talos Intelligence service, we search for the file hash to determine its reputation. The search confirmed that the hash is associated with known malicious files, indicating that the attachment is likely a part of a phishing scheme or malware distribution effort.
+
+    - File Type:
+      - The file is a PDF document and is "zip deflate encoded." Zip deflate is a commonly used compression method, which could be used legitimately to reduce file size or maliciously to evade antivirus detection by obfuscating the contents.
+
+    - Detection Aliases:
+      - The file has multiple detection aliases, indicating that various security vendors or tools have flagged the file under different names.
     
-    ![Screenshot of the email with attachment in Thunderbird](path-to-email-with-attachment-in-thunderbird)
+![Screenshot of Talos Intelligence search result](path-to-talos-intelligence-search-result-screenshot)<br><br>
 
-  - **File Hash Extraction Process**:  
-    We saved the attachment to a controlled environment for further analysis. Utilizing terminal commands in Kali Linux, we executed `
+  - **VirusTotal Hash Analysis**:
+    With our hash value, lets head over to VirusTotal for more information:
+    
+    - Detection:
+      - The file was recognized as malicious by several antivirus vendors under various names, indicating it is a known phishing-related malware. The security community has labeled this threat with identifiers such as `trojan.dqywh/phishingx` and associated it with common phishing and malware tactics.
 
+    - File Behaviors:
+       - The hash analysis revealed activities such as checking for user input and masquerading, typical of phishing attacks aiming to steal data, along with MITRE ATT&CK tactics like T1036 Masquerading and T1082 System Information Discovery, which are indicative of malware's attempts to evade detection.
+   
+![Screenshot of Behavior Tags in VirusTotal](path-to-virustotal-behavior-tags-screenshot)
 
+![Screenshot of MITRE ATT&CK Techniques](path-to-mitre-attck-techniques-screenshot)
 
+  In this subsection the attachment `Support-1923819248-67889.pdf` was confirmed as malware through hash checks with Cisco Talos and VirusTotal, with detections of masquerading and system information discovery tactics. This reinforces the critical need for cautious handling and thorough verification of email attachments in cybersecurity.
 
+  </details>
 
+  These findings reveal the complexity of phishing attacks, stressing the need for careful email analysis. The specific details gathered will play a key role in creating a clear and informative phishing report.
 
-
-These findings highlight the sophistication of phishing tactics and underscore the necessity of rigorous email analysis. The specific values noted here will be instrumental in constructing an informative phishing report.
 </details>
 
 <details>
