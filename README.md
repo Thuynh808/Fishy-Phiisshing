@@ -245,7 +245,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Sole Attachment:
       - A solitary attachment is present, often a vector for delivering malware or enticing users to enter their credentials on a fraudulent webpage.
 
-![Screenshot](path-to-the-screenshot-of-email-in-thunderbird)<br><br>
+![Screenshot](https://i.imgur.com/12wk0Ni.png)<br><br>
 
   - **Source Code Analysis**:
   
@@ -256,7 +256,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Authentication Results: 
       - The SPF check passes, but the absence of a DMARC policy (`DMARC: none`) for `lynnswig.com` is concerning as it allows for potential domain impersonation.
 
-![Screenshot](path-to-the-screenshot-of-email-in-thunderbird)<br><br>
+![Screenshot](https://i.imgur.com/AmSpmEE.png)<br><br>
 
 
   - **PhishTool Analysis**:
@@ -268,9 +268,9 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Transmission Path Anomalies: 
       - The email has passed through several servers, which is unusual for direct communication from trusted organizations like Apple.
 
-![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+![Screenshot](https://i.imgur.com/5RDjPL2.png)<br><br>
 
-![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+![Screenshot](https://i.imgur.com/hCdVc2S.png)<br><br>
       
   - *continued analyis...*
     
@@ -281,9 +281,9 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - WHOIS Lookup on Originating IP:
       - The WHOIS lookup reveals that the originating IP (`40.107.94.65`) is owned by Microsoft Corporation. This could imply that the sender might be using a compromised server or is attempting to spoof a legitimate Microsoft IP to lend credibility to the phishing attempt.
 
-![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+![Screenshot](https://i.imgur.com/KgqhtsG.png)<br><br>
 
-![Screenshot](path-to-the-screenshot-of-google-message-header-analysis)<br><br>
+![Screenshot](https://i.imgur.com/OLbK73b.png)<br><br>
 
   These findings, when combined with the initial email content review, solidify the conclusion that the email is indeed a phishing attempt. The absence of key authentication records, along with the use of a potentially spoofed Microsoft IP, are techniques commonly used by cybercriminals to bypass security measures and exploit recipients.
 
@@ -308,9 +308,9 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Hash Value:
       `54abc6abba94940a13312f3030dcc9e0f9533dde6282aea31f82ee7f7be5ec4b`
         
-![Screenshot of the email with attachment in Thunderbird](path-to-email-with-attachment-in-thunderbird)<br><br>
+![Screenshot of the email](https://i.imgur.com/yrOxpvo.png)<br><br>
 
-![Screenshot of the email with attachment in Thunderbird](path-to-email-with-attachment-in-thunderbird)<br><br>
+![Screenshot](https://i.imgur.com/yNsxPZB.png)<br><br>
 
   - **Reputation Check via Talos**:  
     Using the Cisco Talos Intelligence service, we search for the file hash to determine its reputation. The search confirmed that the hash is associated with known malicious files, indicating that the attachment is likely a part of a phishing scheme or malware distribution effort.
@@ -321,7 +321,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Detection Aliases:
       - The file has multiple detection aliases, indicating that various security vendors or tools have flagged the file under different names.
     
-![Screenshot of Talos Intelligence search result](path-to-talos-intelligence-search-result-screenshot)<br><br>
+![Screenshot of Talos Intelligence search result](https://i.imgur.com/7Y8yHjm.png)<br><br>
 
   - **VirusTotal Hash Analysis**:
     With our hash value, lets head over to VirusTotal for more information:
@@ -332,9 +332,9 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - File Behaviors:
        - The hash analysis revealed activities such as checking for user input and masquerading, typical of phishing attacks aiming to steal data, along with MITRE ATT&CK tactics like T1036 Masquerading and T1082 System Information Discovery, which are indicative of malware's attempts to evade detection.
    
-![Screenshot of Behavior Tags in VirusTotal](path-to-virustotal-behavior-tags-screenshot)
+![Screenshot of Behavior Tags in VirusTotal](https://i.imgur.com/eLkl4CO.png)
 
-![Screenshot of MITRE ATT&CK Techniques](path-to-mitre-attck-techniques-screenshot)
+![Screenshot of MITRE ATT&CK Techniques](https://i.imgur.com/ep6TSKb.png)
 
   In this subsection the attachment `Support-1923819248-67889.pdf` was confirmed as malware through hash checks with Cisco Talos and VirusTotal, with detections of masquerading and system information discovery tactics. This reinforces the critical need for cautious handling and thorough verification of email attachments in cybersecurity.
 
