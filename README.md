@@ -431,12 +431,12 @@ The email originated from the IP address 40.107.94.65, which is registered to Mi
  
 **Response and Recommendations**:
 
-- Immediate Response: Isolated and analyzed the phishing email, blocked the malicious link.
-- System Review: Conducted a security sweep of our systems to ensure no other threats were present.
-- Enhanced Staff Communication: We recommend developing a more robust communication strategy to promptly inform staff about security threats, emphasizing the importance of reporting suspicious activities.
-- Regular Staff Training: It's essential to schedule ongoing cybersecurity training for all employees, focusing on recognizing and handling phishing attempts and other cyber threats.
-- Email Security Upgrades: Upgrading our email security systems with advanced phishing filters and anomaly detection tools can help prevent these incidents
-- Policy and Procedure Updates: Revising our cybersecurity policies to include more frequent security audits, enhanced monitoring protocols, and regular incident response exercises.
+- Blocked Domain: Immediately blocked the sender's domain (lynnswig.com) at the email gateway to prevent further phishing attempts from the same source
+- Isolate and Scan: Isolated systems where the email was opened, and performed antivirus scans to detect any malware
+- Change Passwords: Advise the targeted individual and others in the department to change their passwords for security.
+- Employee Awareness Training: Conduct regular training for employees on identifying and handling phishing attempts.
+- Enhance Email Security: Implement advanced email filtering solutions to detect and block phishing attempts.
+- Update Incident Response Plan: Review and update the incident response plan to include protocols for dealing with phishing and other cyber threats.
 
 ***End of Report***
 
@@ -444,12 +444,15 @@ The email originated from the IP address 40.107.94.65, which is registered to Mi
 
 <details>
   <summary><h2><b>Section 5: Reflection and SOC Analyst Insights</b></h2></summary>
-  In this concluding section, we reflect on the entire project and its implications in the real world of cybersecurity.
+  
+  Alright! Lets take a step back and celebrate our journey through this exciting cybersecurity project.
 
-  - **Project Reflection**:  
-    Discuss the skills and knowledge gained throughout the project.
-  - **SOC Analyst Role Simulation**:  
-    How this project simulates the role of a SOC analyst and its relevance to actual cybersecurity scenarios.
+  **Project Reflection**:
+  
+  What a ride! This project was not just educational, but also a whole lot of fun. It was like being a detective in the digital world, uncovering the secrets of phishing emails and cracking the code of complex security reports. Each step was a new adventure, boosting my problem-solving skills and making me more confident in navigating the digital landscape. It’s been a blast seeing how much I’ve grown and how much I’ve learned.
 
-  ![Placeholder Image for Reflection](https://i.imgur.com/linkToReflectionImage.png)
+  **SOC Analyst Role Simulation**:
+  
+  Playing the role of a SOC Analyst was like being a superhero in the world of cybersecurity. Every challenge was a thrilling mission to safeguard the digital universe. It gave me a real taste of the excitement and responsibility that comes with being on the front lines of cyber defense. This experience not only taught me valuable skills but also showed me how rewarding and fun a career in cybersecurity can be. I’m more excited than ever to dive deeper into this field and face new challenges head-on!
+
 </details>
