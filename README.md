@@ -162,7 +162,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 ![Screenshot of email source code in Thunderbird](path-to-the-screenshot-of-email-source-code-in-thunderbird)
 
     
-  - **Source Code Analysis**:<br>
+  - **Further Analysis**:<br>
     Diving into the source code of the email, we identify multiple discrepancies that confirms our suspicions:
     - Return Path and Originating IP Mismatch:
       - Return-Path: <38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>
