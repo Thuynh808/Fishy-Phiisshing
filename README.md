@@ -357,6 +357,36 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   ![Placeholder Image for Report Compilation](https://i.imgur.com/linkToReportCompilationImage.png)
 </details>
 
+Incident Report: Sophisticated Phishing Attack Detected
+
+Incident ID: [Unique Identifier]
+Reported by: [Your Name/Position]
+Date/Time of Detection: [Date and Time]
+Targeted Department/Individual: [Department or Individual's Name]
+
+Incident Overview:
+
+Detailed description of the phishing incident
+Tactics and techniques used by the attacker
+How the phishing was identified (e.g., suspicious links, language anomalies)
+Technical Details:
+
+IP addresses, if available
+Header information from email
+URLs or domain names involved
+Any malware or payload information
+Response and Mitigation:
+
+Immediate actions taken (e.g., isolation of affected systems)
+Communication with affected parties
+Engagement of incident response team
+Lessons Learned and Recommendations:
+
+Analysis of how the attack could have been prevented
+Training and awareness recommendations
+Technical safeguards to implement
+
+
 <details>
   <summary><h2><b>Section 5: Reflection and SOC Analyst Insights</b></h2></summary>
   In this concluding section, we reflect on the entire project and its implications in the real world of cybersecurity.
