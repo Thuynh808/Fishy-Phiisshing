@@ -400,23 +400,35 @@ In the early hours of December 14th, 2023, our cybersecurity team detected a sop
 
 ***Phishing Report for Email 2***
 
-Incident ID: EM-20231214-0001<br>
+Incident ID: EM-20231214-0002<br>
 Reported by: thuynh808<br>
-Date/Time of Detection: 2:00 PM, Dec 14, 2023<br>
-Targeted Department/Individual: hahatryagain@yahoo.com
+Date/Time of Detection: 3:00 PM, Dec 14, 2023<br>
+Targeted Department/Individual: math.kichuu@hotmail.com
 
 **Incident Overview**: 
-In the early hours of December 14th, 2023, our cybersecurity team detected a sophisticated phishing attack, designated as Incident EM-20231214-001. The attack involved an email, falsely claiming to be from a popular streaming service, Netflix, sent to hahatryagain@yahoo.com. It employed urgent language and a request for sensitive information, aiming to deceive the recipient into divulging their login and credit card details. This targeted attack was a clear attempt to compromise organizational data and financial security.
+On September 7, 2023, 06:40 AM, a potential phishing email was received, claiming to be from Apple, threatening account suspension. This email contains several hallmark features of phishing, such as a sense of urgency, sender domain mismatch, and suspicious attachments.
 
-**Technical Details**:
-- Received Time Stamp: 11:49 AM, Dec 10, 2023
-- Originating IP: 185.33.39.232
-- WHOIS Lookup: Registered to PSINet, Inc.
-- Return Path: `<38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>`
-- SPF: Passed, indicating permission to send from IP
-- DKIM/DMARC: Not verified, skipping email authentication
-- URL Linked: `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`
+**Key Findings**:
+The email originated from the IP address 40.107.94.65, which is registered to Microsoft but was used in conjunction with the domain lynnswig.com, a common tactic in phishing to appear more credible. The absence of DMARC and SPF records for lynnswig.com and the direct indication of the email's malicious nature based on the analysis of the attached PDF's hash value confirm the intent to deceive us.
 
+**Email Header Analysis**:
+- Subject Line: "Your Account Will be Temporary Suspended And Hold All Your Subscription"
+- Sender Email: auth-replyP8YjBYJqsq@lynnswig.com
+- Originating IP: 40.107.94.65, associated with Microsoft, possibly indicating a compromised server.
+- SPF Check: Passed, but no DMARC record for lynnswig.com
+- Received Path: Shows the email passed through several servers, including those typically used by Microsoft, which could be indicative of email server compromise or spoofing.
+
+**Attachment Analysis**:<br>
+- File Name: Support-1923819248-67889.pdf
+- SHA256 Hash: 54abc6abba94940a13312f3030dcc9e0f9533dde6282aea31f82ee7f7be5ec4b
+- Talos Reputation Check: File is marked as a malicious trojan
+- VirusTotal Analysis: 
+  - Detected as malicious trojan by 26 security vendors
+  - Exhibits behavior tags like user input checks and masquerading
+- MITRE ATT&CK tactics observed:
+  - T1036 Masquerading: This tactic involves the malicious file disguising itself as a legitimate file to avoid detection. This could explain why it's named as a 'Support' file, possibly to trick users into thinking it's a benign document. 
+  - T1082 System Information Discovery: This indicates that the file has capabilities to gather information about the system it infects. Such data can be used for further attacks or exploitation.
+ 
 **Response and Recommendations**:
 
 - Immediate Response: Isolated and analyzed the phishing email, blocked the malicious link.
