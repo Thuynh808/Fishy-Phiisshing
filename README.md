@@ -345,47 +345,90 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
 
 <details>
   <summary><h2><b>Section 4: Compiling the Phishing Report</b></h2></summary>
-  Our final task is to compile a comprehensive phishing report that encapsulates our findings and insights.
+    Our final task is to put together a comprehensive phishing report that encapsulates our findings and insights. We'll use the following structure to craft our report.<br><br>
 
-  - **Report Structure**:  
-    Outline of the report, including types of attacks, common traits, and notable patterns.
-  - **Key Findings**:  
-    Summarization of the most significant insights from our analysis.
-  - **Recommendations**:  
-    Practical advice and strategies based on our findings.
+**Incident Report Structure**:
+  
+  - **Incident Header**:
+    - Summarizes basic information like the report's title, Incident ID, reporter details, incident date and time, and the affected party.
 
-  ![Placeholder Image for Report Compilation](https://i.imgur.com/linkToReportCompilationImage.png)
+  - **Incident Overview**:
+    - Provides a brief summary of the incident, highlighting the nature and scope of the event.
+
+  - **Technical Details and Key Findings**:
+    - Covers specific technical information and crucial findings from the investigation, such as IP addresses, email headers, and tactics used by the attacker.
+
+  - **Response and Recommendations**:
+    - Describes immediate actions taken to address the incident, including system isolation and team responses to mitigate the impact.
+    - Reflects on the incident to derive key lessons and suggests recommendations for prevention and improved response in the future.<br><br>
+    
+
+***Phishing Report for Email 1***
+
+Incident ID: EM-20231214-0001<br>
+Reported by: thuynh808<br>
+Date/Time of Detection: 2:00 PM, Dec 14, 2023<br>
+Targeted Department/Individual: hahatryagain@yahoo.com
+
+**Incident Overview**: 
+In the early hours of December 14th, 2023, our cybersecurity team detected a sophisticated phishing attack, designated as Incident EM-20231214-001. The attack involved an email, falsely claiming to be from a popular streaming service, Netflix, sent to hahatryagain@yahoo.com. It employed urgent language and a request for sensitive information, aiming to deceive the recipient into divulging their login and credit card details. This targeted attack was a clear attempt to compromise organizational data and financial security.
+
+**Technical Details and Key Findings**:
+- Received Time Stamp: 11:49 AM, Dec 10, 2023
+- Originating IP: 185.33.39.232
+- WHOIS Lookup: Registered to PSINet, Inc.
+- Return Path: `<38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>`
+- SPF: Passed, indicating permission to send from IP
+- DKIM/DMARC: Not verified, skipping email authentication
+- URL Linked: `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`
+
+**Response and Recommendations**:
+- Immediate Response: Isolated and analyzed the phishing email, blocked the malicious link.
+  
+- System Review: Conducted a security sweep of our systems to ensure no other threats were present.
+  
+- Enhanced Staff Communication: We recommend developing a more robust communication strategy to promptly inform staff about security threats, emphasizing the importance of reporting suspicious activities.
+  
+- Regular Staff Training: It's essential to schedule ongoing cybersecurity training for all employees, focusing on recognizing and handling phishing attempts and other cyber threats.
+  
+- Email Security Upgrades: Upgrading our email security systems with advanced phishing filters and anomaly detection tools can help prevent these incidents
+  
+- Policy and Procedure Updates: Revising our cybersecurity policies to include more frequent security audits, enhanced monitoring protocols, and regular incident response exercises.
+
+***End of Report***
+<br><br><br>
+
+***Phishing Report for Email 2***
+
+Incident ID: EM-20231214-0001<br>
+Reported by: thuynh808<br>
+Date/Time of Detection: 2:00 PM, Dec 14, 2023<br>
+Targeted Department/Individual: hahatryagain@yahoo.com
+
+**Incident Overview**: 
+In the early hours of December 14th, 2023, our cybersecurity team detected a sophisticated phishing attack, designated as Incident EM-20231214-001. The attack involved an email, falsely claiming to be from a popular streaming service, Netflix, sent to hahatryagain@yahoo.com. It employed urgent language and a request for sensitive information, aiming to deceive the recipient into divulging their login and credit card details. This targeted attack was a clear attempt to compromise organizational data and financial security.
+
+**Technical Details**:
+- Received Time Stamp: 11:49 AM, Dec 10, 2023
+- Originating IP: 185.33.39.232
+- WHOIS Lookup: Registered to PSINet, Inc.
+- Return Path: `<38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>`
+- SPF: Passed, indicating permission to send from IP
+- DKIM/DMARC: Not verified, skipping email authentication
+- URL Linked: `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`
+
+**Response and Recommendations**:
+
+- Immediate Response: Isolated and analyzed the phishing email, blocked the malicious link.
+- System Review: Conducted a security sweep of our systems to ensure no other threats were present.
+- Enhanced Staff Communication: We recommend developing a more robust communication strategy to promptly inform staff about security threats, emphasizing the importance of reporting suspicious activities.
+- Regular Staff Training: It's essential to schedule ongoing cybersecurity training for all employees, focusing on recognizing and handling phishing attempts and other cyber threats.
+- Email Security Upgrades: Upgrading our email security systems with advanced phishing filters and anomaly detection tools can help prevent these incidents
+- Policy and Procedure Updates: Revising our cybersecurity policies to include more frequent security audits, enhanced monitoring protocols, and regular incident response exercises.
+
+***End of Report***
+
 </details>
-
-Incident Report: Sophisticated Phishing Attack Detected
-
-Incident ID: [Unique Identifier]
-Reported by: [Your Name/Position]
-Date/Time of Detection: [Date and Time]
-Targeted Department/Individual: [Department or Individual's Name]
-
-Incident Overview:
-
-Detailed description of the phishing incident
-Tactics and techniques used by the attacker
-How the phishing was identified (e.g., suspicious links, language anomalies)
-Technical Details:
-
-IP addresses, if available
-Header information from email
-URLs or domain names involved
-Any malware or payload information
-Response and Mitigation:
-
-Immediate actions taken (e.g., isolation of affected systems)
-Communication with affected parties
-Engagement of incident response team
-Lessons Learned and Recommendations:
-
-Analysis of how the attack could have been prevented
-Training and awareness recommendations
-Technical safeguards to implement
-
 
 <details>
   <summary><h2><b>Section 5: Reflection and SOC Analyst Insights</b></h2></summary>
