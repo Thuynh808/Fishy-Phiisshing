@@ -150,6 +150,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   - **Email Examination with Thunderbird**:  
     We open a suspicious email that claims to be from a popular streaming service. This email is a prime example of a phishing attempt due to the following signs:<br>
 
+    - Sender email doesn't match display name(Netflix)
     - Urgent call to action
     - Grammatical errors
     - Demand for immediate verification of account details
