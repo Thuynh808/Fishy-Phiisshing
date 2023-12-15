@@ -33,14 +33,14 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     ```bash
     sudo apt update && sudo apt upgrade -y
     ```
-    ![Placeholder Image 1 for Update](https://i.imgur.com/CuMXPwH.png)
+    ![Placeholder Image 1 for Update](https://i.imgur.com/CuMXPwH.png)<br><br>
     
   - **Step 2: Install Thunderbird**:  
     Then, we proceed to install Thunderbird, our chosen application for securely managing and viewing phishing emails.
     ```bash
     sudo apt install thunderbird -y
     ```
-    ![Placeholder Image 1 for Thunderbird](https://i.imgur.com/m1DQqCy.png)
+    ![Placeholder Image 1 for Thunderbird](https://i.imgur.com/m1DQqCy.png)<br><br>
 
   - **Step 3: Set Up Python Environment**:  
     Finally, we'll verify that Python is installed and ready, and then set up pip, Python's package manager. We'll also install the 'requests' library, which is crucial for our scripting tasks.
@@ -57,7 +57,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
       pip3 --version
       pip3 install requests
       ```
-    ![Placeholder Image 1 for Python Setup](https://i.imgur.com/sXExkeW.png)
+    ![Placeholder Image 1 for Python Setup](https://i.imgur.com/sXExkeW.png)<br><br>
 
   With these steps completed, our Kali Linux VM is fully prepared with the latest updates, Thunderbird is ready for email analysis, and our Python environment is equipped for scripting. This forms a robust foundation for our phishing email analysis endeavor.
 
@@ -71,7 +71,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   - **Step 1: Discovering the Data Source**
   Our search for real-world phishing samples begins with a simple Google search: "github phishing pot". The search results lead us to a GitHub repository containing a collection of phishing emails.
 
-  ![Screenshot of Google search result](https://i.imgur.com/42wxMx3.png)
+  ![Screenshot of Google search result](https://i.imgur.com/42wxMx3.png)<br><br>
 
   Upon visiting the repository, we note the following details which are crucial for our script:
 
@@ -80,7 +80,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
   - Branch Name: `main`
   - Folder Containing Emails: `email`
 
-  ![Screenshot of the GitHub repository](https://i.imgur.com/t6CJTOR.png)
+  ![Screenshot of the GitHub repository](https://i.imgur.com/t6CJTOR.png)<br><br>
 
   With this information, we can begin crafting our script.
 
@@ -132,7 +132,7 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Here, we'll save the script as 'download_emails.py'<br><br>
     - In the terminal, navigate to the location of our script and run 'python download_emails.py' (make sure we have the proper privileges)<br><br>
 
-  ![Placeholder Image for Script Development](https://i.imgur.com/y49bm2K.png)
+  ![Placeholder Image for Script Development](https://i.imgur.com/y49bm2K.png)<br><br>
 
   We've now identified a valuable data source, crafted a Python script to automate data retrieval, and run the script to populate our local directory with phishing email samples. This sets a solid foundation for the analysis phase, where we'll dissect the tactics used in these deceptive emails.
   
@@ -155,15 +155,15 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
     - Grammatical errors
     - Demand for immediate verification of account details
 
-![Screenshot of phishing email in Thunderbird](https://i.imgur.com/3JmnrbL.png)
+![Screenshot of phishing email in Thunderbird](https://i.imgur.com/3JmnrbL.png)<br><br>
 
   Next, we'll take a look at the source code to gather more intel.
 
-![Screenshot of email source code in Thunderbird](https://i.imgur.com/H4lDMfv.png)
+![Screenshot of email source code in Thunderbird](https://i.imgur.com/H4lDMfv.png)<br><br>
 
     
   - **Gathered Analysis**:<br>
-    Diving into the source code of the email, we identify multiple discrepancies that confirms our suspicions:
+    After diving into the source code, we can put together multiple discrepancies that confirms our suspicions:
     - Return Path and Originating IP Mismatch:
       - Return-Path: <38Xo3ybKucYXJ85d5PPgDKo7v@torres.newenglandmuscle.com>
       - Originating IP: [38.135.39.232]
@@ -192,34 +192,34 @@ Our final product will be a detailed phishing report, akin to what a SOC analyst
         `http://ahotbid.com/crN0Hc.phtml?drcVgkccstXDcyH8mcfcFlcpc7jfBh566cbbb4Q`<br><br>
     This link could lead us to credential harvesters or introduce malware into our system.
         
-![Screenshot of email source code in Thunderbird](https://i.imgur.com/4cnGyCm.png)
+![Screenshot of email source code in Thunderbird](https://i.imgur.com/4cnGyCm.png)<br><br>
 
   - **Analysis with PhishTool**:  
-    We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.
-    - Head to `phishtool.com` and submit the sample email for analysis
+    We will utilize PhishTool to analyze the email header and trace the origin of the email, looking for discrepancies that could confirm a phishing attempt.<br><br>
+    - Head to `phishtool.com` and submit the sample email for analysis<br><br>
     - We can confirm several indicators of phishing that were initially observed in the source code:
       - The email is sent from an IP address that does not align with the legitimate domain.
       - The Return-Path and originating IP address are linked to a domain not associated with Netflix
       - SPF and DKIM checks do not align with typical results for legitimate emails from the claimed sender
 
     
-![Screenshot of email analysis in PhishTool](https://i.imgur.com/Yy4YTKX.png)
+![Screenshot of email analysis in PhishTool](https://i.imgur.com/Yy4YTKX.png)<br><br>
 
-![Screenshot of email analysis in PhishTool](https://i.imgur.com/c269paA.png)
+![Screenshot of email analysis in PhishTool](https://i.imgur.com/c269paA.png)<br><br>
 
   - **WHOIS Lookup Confirmation**:  
     A WHOIS lookup on the originating IP address uncovers that the email originated from an IP associated with 'PSINet, Inc.', which does not correspond with the Netflix domain. This discrepancy is a common trait of phishing emails.
 
-![Screenshot of WHOIS lookup](https://i.imgur.com/fRMy7UW.png)
+![Screenshot of WHOIS lookup](https://i.imgur.com/fRMy7UW.png)<br><br>
 
-![Screenshot of WHOIS lookup](https://i.imgur.com/i37oYkT.png)
+![Screenshot of WHOIS lookup](https://i.imgur.com/i37oYkT.png)<br><br>
 
   With these steps, we've confirmed the suspicious nature of the email using our analysis tools, reinforcing the initial red flags detected in the email content.
   
   - **Rendered HTML and Credential Harvesting Page**:  
     Upon rendering the HTML of the phishing email, we encounter a credential harvesting page, disguised as a legitimate login portal to deceive the recipient into providing sensitive information.
 
-![Screenshot of credential harvesting page](https://i.imgur.com/resTXe1.png)
+![Screenshot of credential harvesting page](https://i.imgur.com/resTXe1.png)<br><br>
 
   This thorough analysis not only showcases the deceptive techniques used by cybercriminals but also emphasizes the importance of vigilant examination of every aspect of an email that raises suspicion.
 
