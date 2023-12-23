@@ -444,11 +444,7 @@ The email originated from the IP address 40.107.94.65, which is registered to Mi
 </details>
 
 <details>
-  <summary><h2><b>Section 5: Reflection and SOC Analyst Insights</b></h2></summary>
-  
-  Alright! Lets take a step back and celebrate our journey through this exciting cybersecurity project.
-
-  **Project Reflection**:
+  <summary><h2><b>Section 5: Project Reflection</b></h2></summary>
   
   What a ride! This project was not just educational, but also a whole lot of fun. It was like being a detective in the digital world, uncovering the secrets of phishing emails and cracking the code of complex security reports. Each step was a new adventure, boosting my problem-solving skills and making me more confident in navigating the digital landscape. I’m more excited than ever to dive deeper into this field and face new challenges head-on
 </details>
