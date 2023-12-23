@@ -450,10 +450,5 @@ The email originated from the IP address 40.107.94.65, which is registered to Mi
 
   **Project Reflection**:
   
-  What a ride! This project was not just educational, but also a whole lot of fun. It was like being a detective in the digital world, uncovering the secrets of phishing emails and cracking the code of complex security reports. Each step was a new adventure, boosting my problem-solving skills and making me more confident in navigating the digital landscape. It’s been a blast seeing how much I’ve grown and how much I’ve learned.
-
-  **SOC Analyst Role Simulation**:
-  
-  Playing the role of a SOC Analyst was like being a superhero in the world of cybersecurity. Every challenge was a thrilling mission to safeguard the digital universe. It gave me a real taste of the excitement and responsibility that comes with being on the front lines of cyber defense. This experience not only taught me valuable skills but also showed me how rewarding and fun a career in cybersecurity can be. I’m more excited than ever to dive deeper into this field and face new challenges head-on!
-
+  What a ride! This project was not just educational, but also a whole lot of fun. It was like being a detective in the digital world, uncovering the secrets of phishing emails and cracking the code of complex security reports. Each step was a new adventure, boosting my problem-solving skills and making me more confident in navigating the digital landscape. I’m more excited than ever to dive deeper into this field and face new challenges head-on
 </details>
